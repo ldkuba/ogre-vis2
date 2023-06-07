@@ -154,10 +154,10 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
 
         message(STATUS "Building Assimp")
         file(DOWNLOAD
-            https://github.com/ldkuba/assimp-vis2/archive/refs/tags/vis-v0.1.tar.gz
-            ${PROJECT_BINARY_DIR}/vis-v0.1.tar.gz)
+        https://github.com/ldkuba/assimp-vis2/archive/refs/tags/vis-v0.2.tar.gz
+            ${PROJECT_BINARY_DIR}/vis-v0.2.tar.gz)
         execute_process(COMMAND ${CMAKE_COMMAND}
-            -E tar xf vis-v0.1.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
+            -E tar xf vis-v0.2.tar.gz WORKING_DIRECTORY ${PROJECT_BINARY_DIR})
         execute_process(COMMAND ${BUILD_COMMAND_COMMON}
             -DZLIB_ROOT=${OGREDEPS_PATH}
             -DBUILD_SHARED_LIBS=OFF
@@ -165,10 +165,10 @@ if(OGRE_BUILD_DEPENDENCIES AND NOT EXISTS ${OGREDEPS_PATH})
             -DASSIMP_NO_EXPORT=TRUE
             -DASSIMP_BUILD_OGRE_IMPORTER=OFF
             -DASSIMP_BUILD_ASSIMP_TOOLS=OFF
-            ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.1
-            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.1)
+            ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.2
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.2)
         execute_process(COMMAND ${CMAKE_COMMAND}
-        --build ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.1 ${BUILD_COMMAND_OPTS})
+        --build ${PROJECT_BINARY_DIR}/assimp-vis2-vis-v0.2 ${BUILD_COMMAND_OPTS})
     endif()
 
     message(STATUS "Building Bullet")
